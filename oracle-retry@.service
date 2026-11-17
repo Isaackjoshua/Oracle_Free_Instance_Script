@@ -1,0 +1,11 @@
+[Unit]
+Description=Keep asking Oracle for a free server for %i
+After=network-online.target
+
+[Service]
+Type=simple
+ExecStart=%h/finplan-oracle-retry/retry.sh %i
+Restart=no
+
+[Install]
+WantedBy=default.target
